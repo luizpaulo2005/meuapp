@@ -1,0 +1,13 @@
+<% noticias.forEach(function(noticia){ %>
+<div>
+<a href = "/noticias/visualizar?id=<%=noticia.id%>">
+ <%=noticia.id%>
+ <%=noticia.titulo%>
+ <%=noticia.autor%>
+ <%=noticia.descricao%>
+ <%=noticia.dataPublicacao%>
+ <%=noticia.conteudo%>
+ </a>
+ <br>
+ </div>
+ <% }) %>
