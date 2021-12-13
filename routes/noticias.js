@@ -13,8 +13,13 @@ router.get('/', async function(req, res, next) {
 });
 
 router.get('/visualizar', async function(req, res, next) {
-  dados = await Noticia.findById(req.query.id)
-  res.render('noticias/visualizar', { noticia:dados });
+  visualizador = await Noticia.findById(req.query.id)
+  res.json(visualizador);
+});
+
+router.get('/contador', async function(req, res, next) {
+  quantidade = await Noticia.count();
+  res.json({quantidade:quantidade});
 });
 
 module.exports = router;
